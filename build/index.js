@@ -10,6 +10,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const ClassIndexRoutes_1 = __importDefault(require("./routes/ClassIndexRoutes"));
 const ClassEmpleadoRoutes_1 = __importDefault(require("./routes/ClassEmpleadoRoutes"));
 const ClassEnviarCorreoRoutes_1 = __importDefault(require("./routes/ClassEnviarCorreoRoutes"));
+const ClassEstadoEmpleadoRoutes_1 = __importDefault(require("./routes/ClassEstadoEmpleadoRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -27,6 +28,7 @@ class Server {
         this.app.use(ClassIndexRoutes_1.default);
         this.app.use(ClassEmpleadoRoutes_1.default);
         this.app.use(ClassEnviarCorreoRoutes_1.default);
+        this.app.use(ClassEstadoEmpleadoRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

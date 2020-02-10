@@ -9,6 +9,7 @@ import morgan from 'morgan';
 import ObtIndexRoutes from './routes/ClassIndexRoutes';
 import ObtEmpleadoRoutes from './routes/ClassEmpleadoRoutes';
 import ObtEnviarCorreoRoutes from './routes/ClassEnviarCorreoRoutes';
+import ObtEstadoEmpleadoRoutes   from './routes/ClassEstadoEmpleadoRoutes';
 
 class Server {
 
@@ -35,7 +36,7 @@ class Server {
         this.app.use(ObtIndexRoutes);
         this.app.use(ObtEmpleadoRoutes);
         this.app.use(ObtEnviarCorreoRoutes);
-
+        this.app.use(ObtEstadoEmpleadoRoutes);
     }
     
     start():void{
