@@ -49,6 +49,7 @@ import pool from '../database';
             await pool.query('INSERT INTO empleado set ?', [req.body]);
             
             res.json({message:'El Empleado a sido creado'}); 
+            console.log(req.body );
             
         }
         public async delete(req : Request, res: Response) :Promise<void> {

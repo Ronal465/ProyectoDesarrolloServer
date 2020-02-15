@@ -10,6 +10,7 @@ import ObtIndexRoutes from './routes/ClassIndexRoutes';
 import ObtEmpleadoRoutes from './routes/ClassEmpleadoRoutes';
 import ObtEnviarCorreoRoutes from './routes/ClassEnviarCorreoRoutes';
 import ObtEstadoEmpleadoRoutes   from './routes/ClassEstadoEmpleadoRoutes';
+import ObtPermisosEmpleadoRoutes from './routes/ClassPermisosEmpleadoRoutes';
 
 class Server {
 
@@ -37,6 +38,7 @@ class Server {
         this.app.use(ObtEmpleadoRoutes);
         this.app.use(ObtEnviarCorreoRoutes);
         this.app.use(ObtEstadoEmpleadoRoutes);
+        this.app.use(ObtPermisosEmpleadoRoutes);
     }
     
     start():void{

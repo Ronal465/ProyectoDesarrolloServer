@@ -55,6 +55,7 @@ class EmpleadoCotrollers {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO empleado set ?', [req.body]);
             res.json({ message: 'El Empleado a sido creado' });
+            console.log(req.body);
         });
     }
     delete(req, res) {
