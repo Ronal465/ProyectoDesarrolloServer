@@ -18,15 +18,24 @@ const database_1 = __importDefault(require("../database"));
    Ultima Edicion Por:
    Ronaldo Carlos Rodriguez Perez
 */
-class PermisosEmpleadoCotrollers {
+class MarcaCotrollers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM permisosempleado', function (err, result, fields) {
+            yield database_1.default.query('SELECT * FROM marca', function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
             });
         });
     }
+    create(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('INSERT INTO marca set ? ', [req.body], function (err, result, fields) {
+                if (err)
+                    throw err;
+                res.json({ message: 'El marca a sido creado' });
+            });
+        });
+    }
 }
-exports.ObtPermisosEmpleadoCotrollers = new PermisosEmpleadoCotrollers();
+exports.ObtMarcaCotrollers = new MarcaCotrollers();

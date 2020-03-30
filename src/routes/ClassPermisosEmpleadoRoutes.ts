@@ -1,25 +1,30 @@
 
-import {Router} from 'express';
-import {ObtPermisosEmpleadoCotrollers} from '../controllers/ClassPermisosEmpleadoControllers';
+import { Router } from 'express';
+import { ObtPermisosEmpleadoCotrollers } from '../controllers/ClassPermisosEmpleadoControllers';
 
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
 
-class PermisosEmpleadoRoutes{
+class PermisosEmpleadoRoutes {
 
-        public router : Router = Router();
+        public router: Router = Router();
 
-        constructor(){
+        constructor() {
                 this.config();
 
         }
- 
-        config(): void{
 
-            this.router.get('/api/PermisosEmpleado/list',ObtPermisosEmpleadoCotrollers.list);
+        config(): void {
 
-            }
- }
+                this.router.get('/api/PermisosEmpleado/list', ObtPermisosEmpleadoCotrollers.list);
+
+        }
+}
 
 
- const ObtPermisosEmpleadoRoutes= new PermisosEmpleadoRoutes();
+const ObtPermisosEmpleadoRoutes = new PermisosEmpleadoRoutes();
 
- export default ObtPermisosEmpleadoRoutes.router;
+export default ObtPermisosEmpleadoRoutes.router;

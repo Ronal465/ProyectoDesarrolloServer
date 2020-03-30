@@ -14,6 +14,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Bcrypts_1 = require("../Incriptacion/Bcrypts");
 const database_1 = __importDefault(require("../database"));
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
 class EmpleadoCotrollers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -41,7 +46,6 @@ class EmpleadoCotrollers {
                     throw err;
                 }
                 ;
-                console.log(result[0]);
                 if (result.length > 0) {
                     return res.json(result[0]);
                 }
@@ -55,7 +59,6 @@ class EmpleadoCotrollers {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO empleado set ?', [req.body]);
             res.json({ message: 'El Empleado a sido creado' });
-            console.log(req.body);
         });
     }
     delete(req, res) {
@@ -68,7 +71,6 @@ class EmpleadoCotrollers {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            console.log(req.body);
             yield database_1.default.query('UPDATE empleado set ? WHERE Id_Empleado = ?', [req.body, id]);
             res.json({ message: 'El Empleado con el id:  ' + id + " A Sido Actualizado" });
         });
@@ -76,7 +78,6 @@ class EmpleadoCotrollers {
     BloquearEmpleado(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            console.log(req.body);
             yield database_1.default.query('UPDATE empleado set ? WHERE Id_Empleado = ?', [req.body, id]);
             res.json({ message: 'El Empleado con el id:  ' + id + " A Sido Bloqueado" });
         });

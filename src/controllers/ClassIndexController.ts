@@ -1,19 +1,23 @@
-import {Request,Response}   from 'express';
+import { Request, Response } from 'express';
+
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
+
+class IndexCotrollers {
 
 
+    public index(req: Request, res: Response) {
 
-    class IndexCotrollers{
-
-
-        public index (req : Request,res :Response){
-
-           // res.json();
-           res.send('eviado desde index');
-           console.log("entra index indexcontroller");
-
-        }
+        // res.json();
+        res.send('eviado desde index');
 
 
     }
-    
-    export const ObtIndexCotrollers =  new IndexCotrollers();
+
+
+}
+
+export const ObtIndexCotrollers = new IndexCotrollers();

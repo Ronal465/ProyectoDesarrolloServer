@@ -7,12 +7,12 @@ import pool from '../database';
    Ronaldo Carlos Rodriguez Perez
 */
 
-class PermisosEmpleadoCotrollers {
+class TipoIdentificacionCotrollers {
 
 
     public async list(req: Request, res: Response) {
 
-        await pool.query('SELECT * FROM permisosempleado', function (err, result, fields) {
+        await pool.query('SELECT * FROM tipoidentificacion', function (err, result, fields) {
             if (err) throw err;
             res.json(result);
         });
@@ -21,4 +21,4 @@ class PermisosEmpleadoCotrollers {
 
 }
 
-export const ObtPermisosEmpleadoCotrollers = new PermisosEmpleadoCotrollers();
+export const ObtTipoIdentificacionCotrollers = new TipoIdentificacionCotrollers();

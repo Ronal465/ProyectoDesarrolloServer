@@ -12,21 +12,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const database_1 = __importDefault(require("../database"));
 /* Autor:
    Ronaldo Carlos Rodriguez Perez
    Ultima Edicion Por:
    Ronaldo Carlos Rodriguez Perez
 */
-class PermisosEmpleadoCotrollers {
+const database_1 = __importDefault(require("../database"));
+class ClienteCotrollers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM permisosempleado', function (err, result, fields) {
+            yield database_1.default.query("select * from cliente", function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
             });
         });
     }
+    create(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('INSERT INTO cliente set ? ', [req.body], function (err, result, fields) {
+                if (err)
+                    throw err;
+                res.json({ message: 'El Cliente a sido creado' });
+            });
+        });
+    }
 }
-exports.ObtPermisosEmpleadoCotrollers = new PermisosEmpleadoCotrollers();
+exports.ObtClienteCotrollers = new ClienteCotrollers();

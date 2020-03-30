@@ -9,11 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
 class EnviarCorreoController {
     EnviarCorreo(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             var StrContrasenaNueva = req.body.StrContrasenaNueva;
-            console.log("Su Contraseña");
             var nodemailer = require('nodemailer');
             // create reusable transporter object using the default SMTP transport
             // var transporter = nodemailer.createTransport('smtps://proyectocelutel@gmail.com:Celutel2019*');
@@ -41,7 +45,6 @@ class EnviarCorreoController {
                 if (error) {
                     return console.log(error);
                 }
-                console.log('Message sent: ' + info.response);
             });
         });
     }

@@ -18,10 +18,10 @@ const database_1 = __importDefault(require("../database"));
    Ultima Edicion Por:
    Ronaldo Carlos Rodriguez Perez
 */
-class PermisosEmpleadoCotrollers {
+class TipoIdentificacionCotrollers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('SELECT * FROM permisosempleado', function (err, result, fields) {
+            yield database_1.default.query('SELECT * FROM tipoidentificacion', function (err, result, fields) {
                 if (err)
                     throw err;
                 res.json(result);
@@ -29,4 +29,4 @@ class PermisosEmpleadoCotrollers {
         });
     }
 }
-exports.ObtPermisosEmpleadoCotrollers = new PermisosEmpleadoCotrollers();
+exports.ObtTipoIdentificacionCotrollers = new TipoIdentificacionCotrollers();

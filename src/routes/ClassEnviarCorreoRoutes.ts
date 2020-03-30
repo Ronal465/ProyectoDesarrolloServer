@@ -1,23 +1,27 @@
-import {Router} from 'express';
+import { Router } from 'express';
 
-import {ObtEnviarCorreoController} from '../controllers/ClassEnviarCorreoController';
+import { ObtEnviarCorreoController } from '../controllers/ClassEnviarCorreoController';
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
+class CorreoRoutes {
 
-class CorreoRoutes{
+        public router: Router = Router();
 
-        public router : Router = Router();
-
-        constructor(){
+        constructor() {
                 this.config();
 
         }
 
-        config(): void{
-            this.router.put('/api/EnviarCorreo/:Correo',ObtEnviarCorreoController.EnviarCorreo);
-            
-            } 
- }
+        config(): void {
+                this.router.put('/api/EnviarCorreo/:Correo', ObtEnviarCorreoController.EnviarCorreo);
+
+        }
+}
 
 
-const ObtEnviarCorreoRoutes= new CorreoRoutes();
+const ObtEnviarCorreoRoutes = new CorreoRoutes();
 
 export default ObtEnviarCorreoRoutes.router;

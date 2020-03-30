@@ -1,24 +1,29 @@
-import {Router} from 'express';
-import {ObtEstadoEmpleadoCotrollers} from '../controllers/ClassEstadoEmpleadoControllers';
+import { Router } from 'express';
+import { ObtEstadoEmpleadoCotrollers } from '../controllers/ClassEstadoEmpleadoControllers';
 
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
 
-class EstadoEmpleadoRoutes{
+class EstadoEmpleadoRoutes {
 
-        public router : Router = Router();
+        public router: Router = Router();
 
-        constructor(){
+        constructor() {
                 this.config();
 
         }
- 
-        config(): void{
 
-            this.router.get('/api/EstadoEmpleado/list',ObtEstadoEmpleadoCotrollers.list);
+        config(): void {
 
-            }
- }
+                this.router.get('/api/EstadoEmpleado/list', ObtEstadoEmpleadoCotrollers.list);
+
+        }
+}
 
 
- const ObtEstadoEmpleadoRoutes= new EstadoEmpleadoRoutes();
+const ObtEstadoEmpleadoRoutes = new EstadoEmpleadoRoutes();
 
- export default ObtEstadoEmpleadoRoutes.router;
+export default ObtEstadoEmpleadoRoutes.router;

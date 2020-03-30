@@ -2,6 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const ClassEstadoEmpleadoControllers_1 = require("../controllers/ClassEstadoEmpleadoControllers");
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
 class EstadoEmpleadoRoutes {
     constructor() {
         this.router = express_1.Router();

@@ -1,22 +1,28 @@
-import {Router} from 'express';
+import { Router } from 'express';
 
-import {ObtIndexCotrollers} from '../controllers/ClassIndexController';
+import { ObtIndexCotrollers } from '../controllers/ClassIndexController';
 
-class IndexRoutes{
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
 
-        public router : Router = Router();
+class IndexRoutes {
 
-        constructor(){
+        public router: Router = Router();
+
+        constructor() {
                 this.config();
 
         }
 
-        config(): void{
-            this.router.get('/',ObtIndexCotrollers.index);
-            }
- }
+        config(): void {
+                this.router.get('/', ObtIndexCotrollers.index);
+        }
+}
 
 
-const ObtIndexRoutes= new IndexRoutes();
+const ObtIndexRoutes = new IndexRoutes();
 
 export default ObtIndexRoutes.router;

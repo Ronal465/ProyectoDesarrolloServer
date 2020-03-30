@@ -1,18 +1,24 @@
-import {Request,Response}   from 'express';
+import { Request, Response } from 'express';
 import pool from '../database';
 
-    class EstadoEmpleadoCotrollers{
+/* Autor:
+   Ronaldo Carlos Rodriguez Perez
+   Ultima Edicion Por:
+   Ronaldo Carlos Rodriguez Perez
+*/
+
+class EstadoEmpleadoCotrollers {
 
 
-        public async list (req : Request,res :Response){
+    public async list(req: Request, res: Response) {
 
-                await pool.query('SELECT * FROM estadoempleado', function(err, result, fields) {
-                    if (err) throw err;
-                    res.json(result);
-                });
-
-        }
+        await pool.query('SELECT * FROM estadoempleado', function (err, result, fields) {
+            if (err) throw err;
+            res.json(result);
+        });
 
     }
-    
-    export const ObtEstadoEmpleadoCotrollers =  new EstadoEmpleadoCotrollers();
+
+}
+
+export const ObtEstadoEmpleadoCotrollers = new EstadoEmpleadoCotrollers();
