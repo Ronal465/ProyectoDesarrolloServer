@@ -15,6 +15,8 @@ class ClienteRoutes {
     config() {
         this.router.get("/api/Cliente/list", ClassClienteControllers_1.ObtClienteCotrollers.list);
         this.router.put("/api/Cliente", ClassClienteControllers_1.ObtClienteCotrollers.create);
+        this.router.get("/api/Cliente/:identificacion", ClassClienteControllers_1.ObtClienteCotrollers.GetOneCliente);
+        this.router.post("/api/Cliente/:id", ClassClienteControllers_1.ObtClienteCotrollers.update);
     }
 }
 const ObtClienteRoutes = new ClienteRoutes();

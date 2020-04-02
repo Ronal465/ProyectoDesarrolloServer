@@ -30,6 +30,32 @@ class ClienteCotrollers {
 
     }
 
+    public async GetOneCliente(req: Request, res: Response): Promise<any> {
+
+        const { identificacion } = req.params;
+
+
+        const consultaempleado = await pool.query('SELECT * FROM cliente WHERE Numero_Identificacion= ?', [identificacion], function (err, result, fields) {
+            if (err) { throw err };
+
+            if (result.length > 0) {
+                return res.json(result[0]);
+            } else {
+                res.status(404).json({ text: "El cliente No Existe" });
+            }
+
+
+
+        });
+
+    }
+    public async update(req: Request, res: Response): Promise<void> {
+        const { id } = req.params;
+        await pool.query('UPDATE Cliente set ? WHERE Id_cliente = ?', [req.body, id]);
+
+        res.json({ message: 'El Cliente A Sido Actualizado'});
+    }
+
 }
 
 export const ObtClienteCotrollers = new ClienteCotrollers();

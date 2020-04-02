@@ -20,6 +20,8 @@ class ClienteRoutes {
 
                 this.router.get("/api/Cliente/list", ObtClienteCotrollers.list);
                 this.router.put("/api/Cliente", ObtClienteCotrollers.create);
+                this.router.get("/api/Cliente/:identificacion",ObtClienteCotrollers.GetOneCliente);
+                this.router.post("/api/Cliente/:id",ObtClienteCotrollers.update);
 
         }
 }

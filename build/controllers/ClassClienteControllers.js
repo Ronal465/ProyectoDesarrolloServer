@@ -37,5 +37,29 @@ class ClienteCotrollers {
             });
         });
     }
+    GetOneCliente(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { identificacion } = req.params;
+            const consultaempleado = yield database_1.default.query('SELECT * FROM cliente WHERE Numero_Identificacion= ?', [identificacion], function (err, result, fields) {
+                if (err) {
+                    throw err;
+                }
+                ;
+                if (result.length > 0) {
+                    return res.json(result[0]);
+                }
+                else {
+                    res.status(404).json({ text: "El cliente No Existe" });
+                }
+            });
+        });
+    }
+    update(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            yield database_1.default.query('UPDATE Cliente set ? WHERE Id_cliente = ?', [req.body, id]);
+            res.json({ message: 'El Cliente A Sido Actualizado' });
+        });
+    }
 }
 exports.ObtClienteCotrollers = new ClienteCotrollers();
