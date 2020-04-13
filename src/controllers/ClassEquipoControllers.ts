@@ -29,6 +29,26 @@ class EquipoCotrollers {
 
     }
 
+    public async GetOnelist(req: Request, res: Response): Promise<any> {
+
+        const { id } = req.params;
+
+
+        const consultaempleado = await pool.query('SELECT * FROM equipo WHERE FK_Id_cliente= ?', [id], function (err, result, fields) {
+            if (err) { throw err };
+
+            if (result.length > 0) {
+                return res.json(result);
+            }else{
+                return res.json({message:"No Se Encontraron Equipos"});
+            }
+
+
+
+        });
+
+    }
+
 }
 
 export const ObtEquipoCotrollers = new EquipoCotrollers();

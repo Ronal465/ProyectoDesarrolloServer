@@ -13,12 +13,15 @@ import ObtMarcaModeloRoutes from './routes/ClassMarcaModeloRoutes';
 import ObtMarcaRoutes from './routes/ClassMarcaRoutes';
 import ObtClienteRoutes from "./routes/ClassClienteRoutes";
 import ObtEquipoRoutes from "./routes/ClassEquipoRoutes";
+import ObtRepuestosRoutes from "./routes/ClassRepuestosRoutes";
+import ObtJWTRoutes from "./routes/ClassJWTRoutes";
 
 /* Autor:
    Ronaldo Carlos Rodriguez Perez
    Ultima Edicion Por:
    Ronaldo Carlos Rodriguez Perez
 */
+const bodyParser = require('body-parser');
 
 class Server {
 
@@ -36,7 +39,7 @@ class Server {
         this.app.use(cors());
         this.app.use(express.json()); // sirve para que cuando angular le mande un .json lo entienda
         this.app.use(express.urlencoded({ extended: false })); // sirve para que se pueda usar en html pas peticiones
-
+        this.app.use(bodyParser.json());
 
     }
 
@@ -52,6 +55,8 @@ class Server {
         this.app.use(ObtMarcaRoutes);
         this.app.use(ObtClienteRoutes);
         this.app.use(ObtEquipoRoutes);
+        this.app.use(ObtRepuestosRoutes);
+        this.app.use(ObtJWTRoutes);
     }
 
     start(): void {

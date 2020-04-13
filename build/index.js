@@ -17,11 +17,14 @@ const ClassMarcaModeloRoutes_1 = __importDefault(require("./routes/ClassMarcaMod
 const ClassMarcaRoutes_1 = __importDefault(require("./routes/ClassMarcaRoutes"));
 const ClassClienteRoutes_1 = __importDefault(require("./routes/ClassClienteRoutes"));
 const ClassEquipoRoutes_1 = __importDefault(require("./routes/ClassEquipoRoutes"));
+const ClassRepuestosRoutes_1 = __importDefault(require("./routes/ClassRepuestosRoutes"));
+const ClassJWTRoutes_1 = __importDefault(require("./routes/ClassJWTRoutes"));
 /* Autor:
    Ronaldo Carlos Rodriguez Perez
    Ultima Edicion Por:
    Ronaldo Carlos Rodriguez Perez
 */
+const bodyParser = require('body-parser');
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -34,6 +37,7 @@ class Server {
         this.app.use(cors_1.default());
         this.app.use(express_1.default.json()); // sirve para que cuando angular le mande un .json lo entienda
         this.app.use(express_1.default.urlencoded({ extended: false })); // sirve para que se pueda usar en html pas peticiones
+        this.app.use(bodyParser.json());
     }
     routes() {
         this.app.use(ClassIndexRoutes_1.default);
@@ -46,6 +50,8 @@ class Server {
         this.app.use(ClassMarcaRoutes_1.default);
         this.app.use(ClassClienteRoutes_1.default);
         this.app.use(ClassEquipoRoutes_1.default);
+        this.app.use(ClassRepuestosRoutes_1.default);
+        this.app.use(ClassJWTRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

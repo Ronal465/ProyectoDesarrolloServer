@@ -15,6 +15,7 @@ class EquipoRoutes {
     config() {
         this.router.get("/api/Equipo/list", ClassEquipoControllers_1.ObtEquipoCotrollers.list);
         this.router.put("/api/Equipo", ClassEquipoControllers_1.ObtEquipoCotrollers.create);
+        this.router.get("/api/Equipo/:id", ClassEquipoControllers_1.ObtEquipoCotrollers.GetOnelist);
     }
 }
 const ObtEquipoRoutes = new EquipoRoutes();

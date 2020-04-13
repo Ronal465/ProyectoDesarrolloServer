@@ -17,9 +17,10 @@ class EquipoRoutes {
         }
 
         config(): void {
-
+                
                 this.router.get("/api/Equipo/list", ObtEquipoCotrollers.list);
                 this.router.put("/api/Equipo", ObtEquipoCotrollers.create);
+                this.router.get("/api/Equipo/:id", ObtEquipoCotrollers.GetOnelist);
 
         }
 }
