@@ -19,6 +19,7 @@ const ClassClienteRoutes_1 = __importDefault(require("./routes/ClassClienteRoute
 const ClassEquipoRoutes_1 = __importDefault(require("./routes/ClassEquipoRoutes"));
 const ClassRepuestosRoutes_1 = __importDefault(require("./routes/ClassRepuestosRoutes"));
 const ClassJWTRoutes_1 = __importDefault(require("./routes/ClassJWTRoutes"));
+const ClassSolicitudRoutes_1 = __importDefault(require("./routes/ClassSolicitudRoutes"));
 /* Autor:
    Ronaldo Carlos Rodriguez Perez
    Ultima Edicion Por:
@@ -52,6 +53,7 @@ class Server {
         this.app.use(ClassEquipoRoutes_1.default);
         this.app.use(ClassRepuestosRoutes_1.default);
         this.app.use(ClassJWTRoutes_1.default);
+        this.app.use(ClassSolicitudRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -15,6 +15,8 @@ import ObtClienteRoutes from "./routes/ClassClienteRoutes";
 import ObtEquipoRoutes from "./routes/ClassEquipoRoutes";
 import ObtRepuestosRoutes from "./routes/ClassRepuestosRoutes";
 import ObtJWTRoutes from "./routes/ClassJWTRoutes";
+import ObtSolicitudRoutes from "./routes/ClassSolicitudRoutes";
+
 
 /* Autor:
    Ronaldo Carlos Rodriguez Perez
@@ -32,7 +34,6 @@ class Server {
         this.config();
         this.routes();
     }
-
     config(): void {
         this.app.set('port', process.env.PORT || 3000);
         this.app.use(morgan('dev'));    // sirve para que lea las peticiones
@@ -42,7 +43,6 @@ class Server {
         this.app.use(bodyParser.json());
 
     }
-
     routes(): void {
 
         this.app.use(ObtIndexRoutes);
@@ -57,8 +57,8 @@ class Server {
         this.app.use(ObtEquipoRoutes);
         this.app.use(ObtRepuestosRoutes);
         this.app.use(ObtJWTRoutes);
+        this.app.use(ObtSolicitudRoutes);
     }
-
     start(): void {
         this.app.listen(this.app.get('port'), () => {
             console.log("Server on port " + this.app.get('port'));
